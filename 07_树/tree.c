@@ -5,7 +5,7 @@ typedef struct node {
     int data;
     struct node *left;
     struct node *right;
-}Node;
+} Node;
 
 typedef struct tree
 {
@@ -48,7 +48,7 @@ void postorder(Node *node)
 
 void insert(Tree *tree, int value)
 {
-    Node *node = malloc(sizeof(int));
+    Node *node = malloc(sizeof(Node));
     node->data = value;
     node->left = NULL;
     node->right = NULL;
