@@ -1,6 +1,11 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/*
+ * @lc app=leetcode.cn id=70 lang=c
+ *
+ * [70] 爬楼梯
+ */
+
+// @lc code=start
+
 
 int climbStairs(int n){
     int testbuf[100] = {0};
@@ -24,10 +29,5 @@ int climbStairs(int n){
 
     return ret;
 }
+// @lc code=end
 
-int main(void)
-{
-    printf("%d\r\n", climbStairs(45));
-
-    return 0;
-}
