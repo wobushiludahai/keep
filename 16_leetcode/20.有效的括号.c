@@ -1,15 +1,13 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/*
+ * @lc app=leetcode.cn id=20 lang=c
+ *
+ * [20] 有效的括号
+ */
 
-#define bool int
-#define true 1
-#define false 0
-
-
+// @lc code=start
 bool isValid(char * s){
     int len = strlen(s);
-    char stack[len];
+    char stack[10001];
     if (len % 2 == 1) {
         return false;
     }
@@ -23,6 +21,10 @@ bool isValid(char * s){
         if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
             stack[top++] = s[i];
             continue;
+        }
+
+        if (top == 0) {
+            return false;
         }
 
         if (s[i] == ')' && stack[top - 1] == '(') {
@@ -49,10 +51,5 @@ bool isValid(char * s){
 
     return true;
 }
+// @lc code=end
 
-int main(void)
-{
-    printf("%d\r\n", isValid("){"));
-
-    return 0;
-}
