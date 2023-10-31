@@ -7,52 +7,35 @@
 #define false 0
 
 
-bool isValid(char * s){
-    int len = strlen(s);
-    char stack[len];
-    if (len % 2 == 1) {
-        return false;
+int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize){
+    char test_buf[10] = {0};
+
+    for (int i = 0; i < numsSize; i++) {
+        test_buf[nums[i]] = 1;
     }
 
-    if (len == 0) {
-        return true;
+    for (int i = 1; i <= numsSize; i++) {
+        if (test_buf[i] == 0) {
+            nums[*returnSize] = i;
+            *returnSize = *returnSize + 1;
+        }
     }
 
-    int top = 0;
-    for (int i = 0; i < len; i++) {
-        if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
-            stack[top++] = s[i];
-            continue;
-        }
-
-        if (s[i] == ')' && stack[top - 1] == '(') {
-            top--;
-            continue;
-        }
-
-        if (s[i] == '}' && stack[top - 1] == '{') {
-            top--;
-            continue;
-        }
-
-        if (s[i] == ']' && stack[top - 1] == '[') {
-            top--;
-            continue;
-        }
-
-        return false;
+    if (*returnSize != 0) {
+        return nums;
     }
 
-    if (top != 0) {
-        return false;
-    }
-
-    return true;
+    return NULL;
 }
 
 int main(void)
 {
-    printf("%d\r\n", isValid("){"));
+    int nums[] = {4,3,2,7,8,2,3,1};
+    int returnSize = 0;
+
+    findDisappearedNumbers(nums, 8, &returnSize);
+
+    printf("%d\r\n", returnSize);
 
     return 0;
 }
