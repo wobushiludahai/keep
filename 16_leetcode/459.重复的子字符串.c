@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/*
+ * @lc app=leetcode.cn id=459 lang=c
+ *
+ * [459] 重复的子字符串
+ */
 
-#define bool int
-#define true 1
-#define false 0
+// @lc code=start
 
 
 bool repeatedSubstringPattern(char * s){
@@ -37,11 +37,5 @@ bool repeatedSubstringPattern(char * s){
 
     return false;
 }
+// @lc code=end
 
-int main(void)
-{
-    char test_buf[] = "abac";
-    printf("%d\r\n", repeatedSubstringPattern(test_buf));
-
-    return 0;
-}
