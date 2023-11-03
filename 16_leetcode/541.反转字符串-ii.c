@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/*
+ * @lc app=leetcode.cn id=541 lang=c
+ *
+ * [541] 反转字符串 II
+ */
 
-#define bool int
-#define true 1
-#define false 0
-
+// @lc code=start
 void reverse_str(char *src, char *dest, int len)
 {
     printf("test len %d\n", len);
@@ -39,11 +38,5 @@ char* reverseStr(char* s, int k) {
 
     return s;
 }
+// @lc code=end
 
-int main(void)
-{
-    char test_buf[] = "abcdefg";
-    printf("%s\r\n", reverseStr(test_buf, 3));
-
-    return 0;
-}
