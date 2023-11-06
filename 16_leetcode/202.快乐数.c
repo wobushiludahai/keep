@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/*
+ * @lc app=leetcode.cn id=202 lang=c
+ *
+ * [202] 快乐数
+ */
 
-#define bool int
-#define true 1
-#define false 0
-
+// @lc code=start
 unsigned long long int get_sum(unsigned long long num)
 {
     unsigned long long int sum = 0;
@@ -30,17 +29,10 @@ bool isHappy(int n) {
             return false;
         }
 
-        printf("%d\n", num);
-
         if (num > 0xffffffff) {
             return false;
         }
     }
 }
+// @lc code=end
 
-int main(void)
-{
-    isHappy(2);
-
-    return 0;
-}
