@@ -1,17 +1,21 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/*
+ * @lc app=leetcode.cn id=144 lang=c
+ *
+ * [144] 二叉树的前序遍历
+ */
 
-#define bool int
-#define true 1
-#define false 0
-
-struct TreeNode {
-     int val;
-     struct TreeNode *left;
-     struct TreeNode *right;
-};
-
+// @lc code=start
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
 void preorder(struct TreeNode* root, int *res, int *returnSize)
 {
     if (root == NULL) {
@@ -33,8 +37,5 @@ int* preorderTraversal(struct TreeNode* root, int* returnSize) {
 
     return res;
 }
+// @lc code=end
 
-int main(void)
-{
-    return 0;
-}
